@@ -1,6 +1,6 @@
 {
   "name": "multichannel-mixer",
-  "version": "1.0.3",
+  "version": "1.0.7",
   "description": "Multi-channel PCM mixer implemented with NodeJS streams",
   "main": "multichannel-mixer.js",
   "scripts": {
@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/livebassmusicrightnow/multichannel-mixer#readme",
   "dependencies": {
-    "lbmrn-pcm-utils": "0.0.3"
+    "lbmrn-pcm-utils": "0.0.4"
   }
 }
