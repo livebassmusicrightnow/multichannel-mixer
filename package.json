@@ -1,0 +1,34 @@
+{
+  "name": "multichannel-mixer",
+  "version": "1.0.3",
+  "description": "Multi-channel PCM mixer implemented with NodeJS streams",
+  "main": "multichannel-mixer.js",
+  "scripts": {
+    "build": "iced --bare --map --runtime node -o ./ -c src/",
+    "watch": "iced --watch --bare --map --runtime node -o ./ -c src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/livebassmusicrightnow/multichannel-mixer.git"
+  },
+  "keywords": [
+    "pcm",
+    "mixer",
+    "stream",
+    "streams",
+    "bass",
+    "music",
+    "shoutcast",
+    "icecast",
+    "mix"
+  ],
+  "author": "doublerebel",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/livebassmusicrightnow/multichannel-mixer/issues"
+  },
+  "homepage": "https://github.com/livebassmusicrightnow/multichannel-mixer#readme",
+  "dependencies": {
+    "lbmrn-pcm-utils": "0.0.3"
+  }
+}
