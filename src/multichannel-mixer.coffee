@@ -12,7 +12,7 @@ class MultichannelMixer extends Zipper
 
     @streams    = []
     @_unzippers = []
-    @_mixers    = for i in [1..@channels]
+    @_mixers    = for i in [0...@channels]
       mixer = new Mixer @channels, @format
       mixer[i].pipe @inputs[i]
 
@@ -24,7 +24,7 @@ class MultichannelMixer extends Zipper
       @_unzippers.push unzipper
       @streams.push stream
       stream.pipe unzipper
-      unzipper.outputs[i].pipe @_mixers[i] for i in [1..@channels]
+      unzipper.outputs[i].pipe @_mixers[i] for i in [0...@channels]
 
   remove: (streams...) ->
     for stream in streams
@@ -33,7 +33,7 @@ class MultichannelMixer extends Zipper
       @streams.splice index, 1
       unzipper = @_unzippers.splice index, 1
       stream.unpipe unzipper
-      unzipper.outputs[i].unpipe @_mixers[i] for i in [1..@channels]
+      unzipper.outputs[i].unpipe @_mixers[i] for i in [0...@channels]
 
 
 module.exports = MultichannelMixer
