@@ -8,13 +8,13 @@ class MultichannelMixer extends Zipper
     @channels or= 2
     @format   or= FMT_S16LE
 
-    super {@channels, @format}
+    super @channels, @format
 
     @streams    = []
     @_unzippers = []
     @_mixers    = for i in [0...@channels]
       mixer = new Mixer @channels, @format
-      mixer[i].pipe @inputs[i]
+      mixer.pipe @inputs[i]
 
     @add streams...
 
