@@ -4,7 +4,8 @@
 class MultichannelMixer extends Zipper
   @formats: {FMT_F32LE, FMT_S16LE, FMT_U16LE}
 
-  constructor: (streams = [], {@channels, @format}) ->
+  constructor: (streams = [], {@maxInputs, @channels, @format}) ->
+    @maxInputs  = streams.length or 2
     @channels or= 2
     @format   or= FMT_S16LE
 
@@ -13,7 +14,7 @@ class MultichannelMixer extends Zipper
     @streams    = []
     @_unzippers = []
     @_mixers    = for i in [0...@channels]
-      mixer = new Mixer streams.length, @format
+      mixer = new Mixer @maxInputs, @format
       mixer.pipe @inputs[i]
       mixer
 
